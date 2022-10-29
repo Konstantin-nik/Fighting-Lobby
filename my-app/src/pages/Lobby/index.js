@@ -9,7 +9,7 @@ const Start = () => {
 function Lobby() {
   return (
     <>
-      <EquipField id="stickman-equip-field" />
+      <EquipField />
       <Start />
     </>
   );

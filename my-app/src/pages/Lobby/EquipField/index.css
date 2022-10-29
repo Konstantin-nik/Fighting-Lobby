@@ -11,14 +11,6 @@
     background: #f0f0f0;
 }
 
-#column {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
 #stickman-img {
     display: flex;
     justify-content: center;
