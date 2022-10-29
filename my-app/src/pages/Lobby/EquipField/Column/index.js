@@ -2,12 +2,12 @@ import "./index.css";
 
 import Item from "./Item";
 
-function Column() {
+function Column(props) {
   return (
     <div id="column">
-      <Item />
-      <Item />
-      <Item />
+      <Item name={props.name1} />
+      <Item name={props.name2} />
+      <Item name={props.name3} />
     </div>
   );
 }

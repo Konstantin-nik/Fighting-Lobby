@@ -1,7 +1,7 @@
 import "./index.css";
 
-function Item() {
-  return <div id="item-equip-field" />;
+function Item(props) {
+  return <div id="item-equip-field">{props.name}</div>;
 }
 
 export default Item;

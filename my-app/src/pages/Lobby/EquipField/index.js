@@ -16,9 +16,9 @@ const Column1 = () => {
 function EquipField() {
   return (
     <div id="stickman-equip-field">
-      <Column />
+      <Column name1="EQ 1" name2="EQ 2" name3="EQ 3" />
       <Column1 />
-      <Column />
+      <Column name1="EQ 4" name2="EQ 5" name3="EQ 6" />
     </div>
   );
 }
