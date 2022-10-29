@@ -1,0 +1,9 @@
+
+#start-button {
+    border: solid rgb(53, 53, 53) 4px;
+    border-radius: 25px;
+    padding: 1rem 3rem 1rem 3rem;
+    font-family: sans-serif;
+    font-size: 1.4em;
+    width: 180px;
+}

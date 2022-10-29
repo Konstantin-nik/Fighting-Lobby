@@ -1,0 +1,9 @@
+#item-equip-field {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: solid rgb(53, 53, 53) 3px;
+    border-radius: 15px;
+    height: 70px;
+    width: 70px;
+}

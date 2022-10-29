@@ -18,4 +18,5 @@ code {
   flex-direction: column;
   align-content: center;
   align-items: center;
+  user-select: none;
 }
