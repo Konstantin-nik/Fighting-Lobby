@@ -1,7 +1,7 @@
 import Column from "./Column";
 import React from "react";
 
-import stickman from "../../../pict/stickman.gif";
+import stickman from "../../../pict/stickman.svg";
 import "./index.css";
 
 const Column1 = () => {
