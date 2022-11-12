@@ -30,12 +30,14 @@ class EquipField extends React.Component {
     return (
       <div id="stickman-equip-field">
         <Column
+          onItemClick={this.props.onItemClick}
           name1={this.state.helmet}
           name2={this.state.hand1}
           name3={this.state.pants}
         />
         <Column1 />
         <Column
+          onItemClick={this.props.onItemClick}
           name1={this.state.necklace}
           name2={this.state.hand2}
           name3={this.state.boots}

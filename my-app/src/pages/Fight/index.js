@@ -1,6 +1,8 @@
 import FightField from "./FightField";
 import React from "react";
 
+import "./index.css";
+
 class Fight extends React.Component {
   constructor(props) {
     super(props);
@@ -14,14 +16,20 @@ class Fight extends React.Component {
   render() {
     const ExitButton = () => {
       return (
-        <button id="start-button" onClick={this.handleClick}>
+        <button id="exit-button" onClick={this.handleClick}>
           Exit
         </button>
       );
     };
+
+    const TurnButton = () => {
+      return <button id="turn-button">Turn</button>;
+    };
+
     return (
       <>
         <FightField />
+        <TurnButton />
         <ExitButton />
       </>
     );
