@@ -6,9 +6,8 @@ The idea of the project is to make online fighting lobby with virtual fighters w
 ## ToDo
 
 1. Main screen
-
    - **~~Warrior picture~~**
-   - **Lists of weapons**
+   - **~~Lists of weapons~~**
    - **Navigate buttons**
    - **Name field**
    - **Theme switch**
