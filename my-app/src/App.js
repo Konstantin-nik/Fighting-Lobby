@@ -1,31 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Lobby from "./pages/Lobby";
 import Fight from "./pages/Fight";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mode: "Lobby",
-    };
-    this.handleChangeMode = this.handleChangeMode.bind(this);
+function App() {
+  const [mode, setMode] = useState("Lobby");
+  const handleChangeMode = (e) => {
+    setMode(e)
   }
-
-  handleChangeMode(e) {
-    this.setState({ mode: e });
-  }
-
-  render() {
-    if (this.state.mode === "Fight") {
+  if (mode === "Fight") {
       return (
-        <Fight mode={this.state.mode} onModeChange={this.handleChangeMode} />
+        <Fight mode={mode} onModeChange={handleChangeMode} />
       );
-    } else if (this.state.mode === "Lobby") {
+    } else if (mode === "Lobby") {
       return (
-        <Lobby mode={this.state.mode} onModeChange={this.handleChangeMode} />
+        <Lobby mode={mode} onModeChange={handleChangeMode} />
       );
     }
-  }
 }
 
 export default App;
