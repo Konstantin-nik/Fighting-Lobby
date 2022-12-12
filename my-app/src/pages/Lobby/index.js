@@ -18,7 +18,6 @@ class Lobby extends React.Component {
 
   handleStartClick() {
     this.props.onModeChange("Fight");
-    console.log("log2");
   }
 
   handleOnItemClick(item_list) {
