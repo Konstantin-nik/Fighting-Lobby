@@ -1,58 +1,48 @@
 import React from "react";
 import EquipField from "./EquipField";
 import ItemList from "pages/ItemList";
+import { useDispatch } from "react-redux"
+import { useState } from "react"
 
 import "./index.css";
 
-class Lobby extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleStartClick = this.handleStartClick.bind(this);
-    this.handleOnItemClick = this.handleOnItemClick.bind(this);
-    this.handleOnCloseList = this.handleOnCloseList.bind(this);
-    this.state = {
-      isItemListEnabled: false,
-      item_list: null,
-    };
-  }
+function Lobby() {
+	const [isListEnabled, changeList] = useState(false)
+	const [itemList, setList] = useState()
+	const dispatch = useDispatch()
+	
+	const handleStartClick = () => {
+    	dispatch({ type: "changeMode", payload: "Fight" })
+	}
+	
+	const handleOnCloseList = () => {
+    	changeList(false)
+    }
+    
+    const handleOnItemClick = (item_list) => {
+    	setList(item_list)
+    	changeList(!isListEnabled)
+    }
 
-  handleStartClick() {
-    this.props.onModeChange("Fight");
-  }
-
-  handleOnItemClick(item_list) {
-    console.log("log1");
-    this.setState({
-      isItemListEnabled: !this.state.isItemListEnabled,
-      item_list: item_list,
-    });
-  }
-
-  handleOnCloseList() {
-    this.setState({
-      isItemListEnabled: false,
-    });
-  }
-
-  render() {
-    const Start = () => {
+	const Start = () => {
       return (
-        <button id="start-button" onClick={this.handleStartClick}>
+        <button id="start-button" onClick={handleStartClick}>
           Start
         </button>
       );
     };
-    let UpField = () => {
-      return this.state.isItemListEnabled ? <ItemList onCloseClick={this.handleOnCloseList} list={this.state.item_list}/> : null;
+    
+    const UpField = () => {
+      return isListEnabled ? <ItemList onCloseClick={handleOnCloseList} list={itemList}/> : null;
     };
+    
     return (
       <>
         <UpField />
-        <EquipField onItemClick={this.handleOnItemClick} />
+        <EquipField onItemClick={handleOnItemClick} />
         <Start />
       </>
     );
-  }
 }
 
 export default Lobby;

@@ -3,16 +3,30 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import store from "./store"
+import { createStore } from "redux"
+import {Provider} from "react-redux"
 
-import { Provider } from 'react-redux'
+const defaultState = {
+	mode: 'Lobby',
+}
+
+const reducer = (state = defaultState, action) => {
+  switch (action.type) {
+  	case "changeMode":
+  		return { ...state, mode: action.payload }
+  	default: 
+  		return state
+  }
+}
+
+const store = createStore(reducer)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-    </Provider >
+    </Provider>
   </React.StrictMode>
 );
 
